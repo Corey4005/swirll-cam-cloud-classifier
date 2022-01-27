@@ -1,6 +1,8 @@
 # swirll-cam-cloud-classifier
 The goal of this repository is to provide students at UAH with an opportunity to collaborate on a github project developing a cloud classifier for the SWIRLL roundshot camera. 
 
+PLEASE SEE: [Helpful Video](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+
 # Task List
 - [ ] Develop a set of rules for how contributing developers can engage with this repo. 
 - [ ] Choose a cloud image dataset.
