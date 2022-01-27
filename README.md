@@ -5,7 +5,7 @@ The goal of this repository is to provide students at UAH with an opportunity to
 
 PLEASE SEE: [Helpful Video](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
-Classic Rock (70s and 80s):
+Classic Rock (70s and 80s):\
 [Billy Joel](https://www.youtube.com/watch?v=uqFiBBmVlj4)
 
 # Task List
