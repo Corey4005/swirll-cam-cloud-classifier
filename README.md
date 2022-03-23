@@ -1,27 +1,18 @@
-# swirll-cam-cloud-classifier
+# Welcome to swirll-cam-cloud-classifier repo!
+
 The goal of this repository is to provide students at UAH with an opportunity to collaborate on a github project developing a cloud classifier for the SWIRLL roundshot camera. 
 
-# Fun music to listen to while you are developing code for this repo
-
-PLEASE SEE: [Helpful Video](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-
-Classic Rock (70s and 80s):\
-[Billy Joel](https://www.youtube.com/watch?v=uqFiBBmVlj4)
-
 # Task List
-- [ ] Develop a set of rules for how contributing developers can engage with this repo. 
-- [x] Choose a cloud image dataset.
-- [ ] Develop Convolutional Neural Network model and save it. 
-  - What is that? [Here](https://www.tensorflow.org/tutorials/images/cnn) is some documentation that may be helpful. 
-- [ ] Test CNN model on images downloaded from [SWIRLL Roundshot](https://uah.roundshot.com/swirll/) and iterate. 
-- [ ] Develop Github.io website wrapper that allows users to upload images of interest for the model to classify.
+- [x] Download raw cloud image dataset and share to this repo.
+- [ ] Create labeled cloud database for other end-users in SWIRLL.
+- [ ] Develop science questions for object detection of clouds.  
+- [ ] Engineer some object detection models for cloud detection and provide documentation.
+- [ ] Deploy models to application and demonstrate cloud detection use-cases using computer vision. 
 
-# Updates
-3/21/2022 
-- Cloud data has been selected for labeling from the SWIRRL roundshot camera from the archive
-[here](https://www.nsstc.uah.edu/swirll/cams/swirll/loopgen/). 
-- Files were renamed from the download file tree to one directory location using [this](./data/sortfiles.py) script. 
-
-# Long Term EPIC idea
-- [ ] Develop cloud detection bounding box when a specific cloud is identified in SWIRLL Roundshot
-  - [What is a bounding box?](https://d2l.ai/chapter_computer-vision/bounding-box.html)
+# Image Labeler Used in This Project 
+- Directions for download and documentation for the image labeler used in this project can be found in [this](https://github.com/tzutalin/labelImg) repo. 
+# Updates 
+Date | Update 
+|---|---| 
+| 3/21/2022 | Cloud data has been selected for labeling from the SWIRRL roundshot camera from the archive. Files were renamed in the download tree and moved to a single directory location using [this](./data/sortfiles.py) script. |
+| 3/23/2022 | Directions and location of raw image data for downloading to your local machine can be found [here](./data/README.md). |
