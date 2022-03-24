@@ -9,8 +9,22 @@ The goal of this repository is to provide students at UAH with an opportunity to
 - [ ] Engineer some object detection models for cloud detection and provide documentation.
 - [ ] Deploy models to application and demonstrate cloud detection use-cases using computer vision. 
 
-# Image Labeler Used in This Project 
-- Directions for download and documentation for the image labeler used in this project can be found in [this](https://github.com/tzutalin/labelImg) repo. 
+# Credits for Image Labeler Used in This Project 
+- We use the image labeler found in [this](https://github.com/tzutalin/labelImg) repo, which was built by [*Tzuta Lin*](https://tzutalin.github.io/). 
+
+### Pull Image labeler to local directory
+```
+mkdir imglabeler
+git clone https://github.com/tzutalin/labelImg.git
+```
+### How to start the image labeler Anaconda + Windows
+```
+conda install pyqt=5
+conda install -c anaconda lxml
+pyrcc5 -o libs/resources.py resources.qrc
+python labelImg.py
+python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
+```
 # Updates 
 Date | Update 
 |---|---| 
