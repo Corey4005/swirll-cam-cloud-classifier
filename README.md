@@ -1,23 +1,23 @@
 # Welcome to swirll-cam-cloud-classifier repo!
 
-The goal of this repository is to provide students at UAH with an opportunity to collaborate on a github project developing a cloud classifier for the SWIRLL roundshot camera. 
+The goal of this repository is to provide students at UAH with an opportunity to collaborate on a github project developing a cloud classifier for the SWIRLL roundshot camera, as well as provide a sample methodology for this work. 
 
-# Task List
+# Task List and Progress
 - [x] Download raw cloud image dataset and share to this repo.
 - [ ] Create labeled cloud database for other end-users in SWIRLL.
-- [ ] Develop science questions for object detection of clouds.  
-- [ ] Engineer some object detection models for cloud detection and provide documentation.
+- [ ] Develop a module of functions that are useful for object detection of clouds and share to this repo.  
+- [ ] Analyze multiple [object detection models](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) for cloud detection and provide Jupyter notebook documentation.
 - [ ] Deploy models to application and demonstrate cloud detection use-cases using computer vision. 
 
 # Credits for Image Labeler Used in This Project 
-- We use the image labeler found in [this](https://github.com/tzutalin/labelImg) repo, which was built by [*Tzuta Lin*](https://tzutalin.github.io/). 
+- We use the image labeler found in [this](https://github.com/tzutalin/labelImg) repo, which was built by [*Tzuta Lin*](https://tzutalin.github.io/) to label cloud classes in SWIRLL images. 
 
-### Pull Image labeler to local directory
+### How to pull image labeler to your local directory
 ```
 mkdir imglabeler
 git clone https://github.com/tzutalin/labelImg.git
 ```
-### How to start the image labeler Anaconda + Windows
+### How to start the image labeler with Anaconda + Windows
 ```
 conda install pyqt=5
 conda install -c anaconda lxml
