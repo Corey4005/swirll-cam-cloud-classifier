@@ -30,3 +30,4 @@ Date | Update
 |---|---| 
 | 3/21/2022 | Cloud data has been selected for labeling from the SWIRRL roundshot camera from the archive. Files were renamed in the download tree and moved to a single directory location using [this](./data/sortfiles.py) script. |
 | 3/23/2022 | Directions and location of raw image data for downloading to your local machine can be found [here](./data/README.md). |
+| 4/4/2022 | A train-test-split function developed for labeled cumulus versus non-cumulus classes is demonstrated in a Jupyter notebook found [here](https://github.com/Corey4005/swirll-cam-cloud-classifier/blob/main/notebooks/label_and_split_images.ipynb) |
