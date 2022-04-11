@@ -11,20 +11,8 @@ The goal of this repository is to provide students at UAH with an opportunity to
 
 # Credits for Image Labeler Used in This Project 
 - We use the image labeler found in [this](https://github.com/tzutalin/labelImg) repo, which was built by [*Tzuta Lin*](https://tzutalin.github.io/) to label cloud classes in SWIRLL images. 
+- There is documentation on the how to use the image labeler in the [imglabeler](https://github.com/Corey4005/swirll-cam-cloud-classifier/tree/main/imglabeler) directory of this repo. 
 
-### How to pull image labeler to your local directory
-```
-mkdir imglabeler
-git clone https://github.com/tzutalin/labelImg.git
-```
-### How to start the image labeler with Anaconda + Windows
-```
-conda install pyqt=5
-conda install -c anaconda lxml
-pyrcc5 -o libs/resources.py resources.qrc
-python labelImg.py
-python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
-```
 # Updates 
 Date | Update 
 |---|---| 
