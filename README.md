@@ -8,7 +8,7 @@ git pull https://github.com/Corey4005/swirll-cam-cloud-classifier.git
 ```
 
 # Credits for Image Labeler Used in This Project 
-- We use the image labeler found in [this](https://github.com/tzutalin/labelImg) repo, which was built by [*Tzuta Lin*](https://tzutalin.github.io/) to label cloud classes in SWIRLL images. We have simply copied the code from their repo into this one so that it is pulled alongside this one. 
+- We use the image labeler found in [this](https://github.com/tzutalin/labelImg) repo, which was built by [*Tzuta Lin*](https://tzutalin.github.io/) to label cloud classes in SWIRLL images. We have simply copied the code from their repo into this one so all important codes can be pulled together. 
 - There is documentation on the how to use the image labeler in the [imglabeler](https://github.com/Corey4005/swirll-cam-cloud-classifier/tree/main/imglabeler) directory of this repo. 
 
 # Task List and Progress
