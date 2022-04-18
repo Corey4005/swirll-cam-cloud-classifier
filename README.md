@@ -25,4 +25,5 @@ Date | Update
 | 3/23/2022 | Directions and location of raw image data for downloading to your local machine can be found [here](./swirll-data/README.md). |
 | 4/4/2022 | A train-test-split function developed for labeled cumulus versus non-cumulus classes is demonstrated in a Jupyter notebook found [here](https://github.com/Corey4005/swirll-cam-cloud-classifier/blob/main/notebooks/label_and_split_images.ipynb) |
 | 4/13/2022 | [Tensorflow models](https://github.com/Corey4005/swirll-cam-cloud-classifier/tree/main/Tensorflow/models) were downloaded and added to the repository for ease of access |
+| 4/18/2022 | A custom .xml to .csv function for the labeled image data has been added to [functions.py](https://github.com/Corey4005/swirll-cam-cloud-classifier/blob/main/function-modules/functions.py) to make labels for Tensorflow models. |
 
