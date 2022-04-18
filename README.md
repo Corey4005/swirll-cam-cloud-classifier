@@ -23,6 +23,6 @@ Date | Update
 |---|---| 
 | 3/21/2022 | Cloud data has been selected for labeling from the SWIRRL roundshot camera from the archive. Files were renamed in the download tree and moved to a single directory location using [this](./function-modules/sortfiles.py) script. |
 | 3/23/2022 | Directions and location of raw image data for downloading to your local machine can be found [here](./swirll-data/README.md). |
-| 4/13/2022 | [Tensorflow models](https://github.com/Corey4005/swirll-cam-cloud-classifier/tree/main/Tensorflow/models) were downloaded and added to the repository for ease of access |
+| 4/13/2022 | [Tensorflow models](https://github.com/Corey4005/swirll-cam-cloud-classifier/tree/main/Tensorflow/models) were downloaded and added to this repository for ease of access. |
 | 4/18/2022 | A custom .xml to .csv function for the labeled image data has been added to [functions.py](https://github.com/Corey4005/swirll-cam-cloud-classifier/blob/main/function-modules/functions.py) to make labels for Tensorflow models. A custom train-test-split function also has been successfully developed that works with the file structure in this repository |
 
