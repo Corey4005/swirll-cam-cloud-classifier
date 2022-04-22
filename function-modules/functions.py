@@ -30,9 +30,14 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mplim
 import numpy as np
 from datetime import datetime
+from collections import defaultdict
 
 #the filepath to the swirll images:
 swirlldata = '../Tensorflow/workspace/swirll_demo/images'
+
+#the filepaths to cloud fraction data
+cloud_fraction_swirll_2020 = '../swirll-data/2020_cloud_fraction_swirll.csv'
+cloud_fraction_HSV_ASOS_2020 = '../swirll-data/2020_cloud_fraction_HSV_ASOS.csv'
 
 #train and test directories
 train_dir = os.path.join(swirlldata, 'train')
@@ -42,6 +47,10 @@ test_dir = os.path.join(swirlldata, 'test')
 train_label = os.path.join(train_dir, 'data')
 test_label = os.path.join(test_dir, 'data')
 
+
+###############
+## FUNCTIONS ##
+###############
 
 def train_test_split(class_dir, split=None):
     '''
@@ -216,7 +225,8 @@ def run_xml_to_csv():
         xml_df = xml_to_csv(image_path)
         xml_df.to_csv(image_path + 'data/{}_labels.csv'.format(directory), index=None)
         print('Successfully converted xml to csv.')
-    
+
+def     
 
 def cloud_fraction_all_imgs():
     '''
@@ -280,7 +290,7 @@ def cloud_fraction_all_imgs():
         cf_img = np.uint8(cf_img)  # Convert back to 8-bit unsigned integer
 
         #Get number of pixels above threshold percentage
-        threshold_percentage = 0.10  # approx 20% experimentally observed
+        threshold_percentage = 0.10 # approx 20% experimentally observed
         # threshold_img = (cf_img / 255) > threshold_percentage
         thresh_vals = np.count_nonzero( (cf_img / 255) > threshold_percentage )
 
@@ -324,7 +334,75 @@ def cloud_fraction_all_imgs():
     df.to_csv(savepath+'2020_cloud_fraction_swirll.csv')
     
     return df
+
+
+    
+def merge():
+    '''
+
+    Returns
+    -------
+    merged : Pandas DataFrame
+        Contains the HSV ASOS Cloud Cover data from the celiometer (weighted 
+        average) combined with cloud fraction data from swirll's roundshot.
+
+    '''
+    #HSV ASOS 
+    df = pd.read_csv(cloud_fraction_HSV_ASOS_2020)
+    
+    #datetime converstion
+    df['Date'] = pd.to_datetime(df['Date'])
+    
+    #format
+    df['Date'] = df['Date'].dt.strftime('%Y-%m-%d-%H')
     
     
+    
+    #SWIRLL
+    df2 = pd.read_csv(cloud_fraction_swirll_2020)
+    
+    #datetime conversion
+    df2['Date'] = pd.to_datetime(df2['Date'])
+    
+    #format 
+    df2['Date'] = df2['Date'].dt.strftime('%Y-%m-%d-%H')
+    
+    #merge both dataframes on date
+    merged = pd.merge(df2, df, on='Date')
+    
+    #reduce dataset to important columns
+    merged = merged[['Date', 'skyc1', 'skyc2', 'skyc3', 'Cloud Fraction']]
+    
+    #class numbers for cloud fractions
+    cf_names = {'CLR' : 0, 
+                'FEW' : 1, 
+                'SCT' : 2, 
+                'BKN' : 3, 
+                'OVC' : 4, 
+                'VV ': np.nan, 
+                'M' : np.nan}
+    
+    #lambda function to apply over columns and return number
+    get_class = lambda x: cf_names[x]
+    
+    #get the class number for each 
+    merged['hsv_skyc1_class'] = merged['skyc1'].apply(get_class)
+    merged['hsv_skyc2_class'] = merged['skyc2'].apply(get_class)
+    merged['hsv_skyc3_class'] = merged['skyc3'].apply(get_class)
+    merged['swirll_class'] = merged['Cloud Fraction'].apply(get_class)
+    merged['hsv_combined'] = merged[['hsv_skyc1_class', 'hsv_skyc2_class', 'hsv_skyc3_class']].mean(axis=1)
+    
+    #set the dataframe to corresponding columns
+    merged = merged[['Date', 'hsv_skyc1_class', 'hsv_skyc2_class', 'hsv_skyc3_class', 'swirll_class', 'hsv_combined']]
+    
+    #set date as index
+    merged.set_index('Date', inplace=True)
+    merged.index = pd.to_datetime(merged.index)
+    
+    return merged
+
+    
+        
+        
     
     
