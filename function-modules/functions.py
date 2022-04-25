@@ -33,7 +33,7 @@ from datetime import datetime
 from collections import defaultdict
 
 #the filepath to the swirll images:
-swirlldata = '../Tensorflow/workspace/swirll_demo/images'
+swirlldata = '../Tensorflow/models/research/object_detection/workspace/swirll_demo/images'
 
 #the filepaths to cloud fraction data
 cloud_fraction_swirll_2020 = '../swirll-data/2020_cloud_fraction_swirll.csv'
@@ -226,7 +226,6 @@ def run_xml_to_csv():
         xml_df.to_csv(image_path + 'data/{}_labels.csv'.format(directory), index=None)
         print('Successfully converted xml to csv.')
 
-def     
 
 def cloud_fraction_all_imgs():
     '''

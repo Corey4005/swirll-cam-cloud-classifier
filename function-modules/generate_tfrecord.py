@@ -6,15 +6,15 @@
 '
 Command for test record:
     python generate_tfrecord.py 
-    --csv_input='../Tensorflow/workspace/swirll_demo/images/test/data/'
-    --output_path=../Tensorflow/workspace/swirll_demo/images/test/data/test.record 
-    --image_dir='../Tensorflow/workspace/swirll_demo/images
+    --csv_input='../Tensorflow/models/research/object_detection/workspace/swirll_demo/images/test/data/'
+    --output_path=../Tensorflow/models/research/object_detection/workspace/swirll_demo/images/test/data/test.record 
+    --image_dir='../Tensorflow/models/research/object_detection/workspace/swirll_demo/images
     
 Command for training record: 
     python generate_tfrecord.py 
-    --csv_input='../Tensorflow/workspace/swirll_demo/images/train/data/'
-    --output_path=../Tensorflow/workspace/swirll_demo/images/train/data/test.record 
-    --image_dir='../Tensorflow/workspace/swirll_demo/images
+    --csv_input='../Tensorflow/models/research/object_detection/workspace/swirll_demo/images/train/data/'
+    --output_path=../Tensorflow/models/research/object_detection/workspace/swirll_demo/images/train/data/train.record 
+    --image_dir='../Tensorflow/models/research/object_detection/workspace/swirll_demo/images
 
 Created on Fri Apr 22 11:50:27 2022
 
