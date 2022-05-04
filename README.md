@@ -14,18 +14,18 @@ git pull https://github.com/Corey4005/swirll-cam-cloud-classifier.git
 # Credits for Compute Resources 
 This work was made possible in part by a grant of high performance computing resources and technical support from the [Alabama Supercomputer Authority](https://hpcdocs.asc.edu/).
 
-# Task List and Progress
-- [x] Download raw cloud image dataset and share to this repo.
-- [ ] Create labeled cloud database for other end-users in SWIRLL.
-- [ ] Develop a module of functions that are useful for object detection of clouds and share to this repo.  
-- [ ] Analyze multiple [object detection models](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) for cloud detection and provide Jupyter notebook documentation.
-- [ ] Deploy models to application and demonstrate cloud detection use-cases using computer vision. 
+# Model Description
+The fair-weather-cumulus object detector was trained on Tensorflow 1.14.0 using the [ssd_mobilenet_v1_coco model](https://github.com/tensorflow/models/blob/master/research/object_detection/samples/configs/ssd_mobilenet_v1_coco.config). This is a convolutional neural network which seperates standard convolution into two steps described in the figure 2 below: 
 
-# Updates 
-Date | Update 
-|---|---| 
-| 3/21/2022 | Cloud data has been selected for labeling from the SWIRRL roundshot camera from the archive. Files were renamed in the download tree and moved to a single directory location using [this](./function-modules/sortfiles.py) script. |
-| 3/23/2022 | Directions and location of raw image data for downloading to your local machine can be found [here](./swirll-data/README.md). |
-| 4/13/2022 | [Tensorflow models](https://github.com/Corey4005/swirll-cam-cloud-classifier/tree/main/Tensorflow/models) were downloaded and added to this repository for ease of access. |
-| 4/18/2022 | A custom .xml to .csv function for the labeled image data has been added to [functions.py](https://github.com/Corey4005/swirll-cam-cloud-classifier/blob/main/function-modules/functions.py) to make labels for Tensorflow models. A custom train-test-split function also has been successfully developed that works with the file structure in this repository |
+<p align="center">
+  <img 
+    width="450"
+    height="600"
+    src="https://github.com/Corey4005/swirll-cam-cloud-classifier/blob/main/demo-notebooks/images/depth-wise-vs-point.PNG"
+  >
+</p>
+
+Standard convolution kernals contain a width *D<sub>k</sub>*, a height *D<sub>k</sub>* and a depth *M*. These kernals are applied to an image feature with horizontal width *D<sub>f</sub>* and vertical height *D<sub>f</sub>*, *N<sup>2</sup>* times producting a map *G* with computational cost of *D<sub>k</sub> x D<sub>k</sub> x M x N x D<sub>f</sub> x D<sub>f</sub>.* The ssd_mobilenet_v1_coco model breaks this standard method into two steps: pairwise and depthwise convolutions, resulting in a computational cost of *D<sub>k</sub>* x *D<sub>k</sub>* x *M* x *D<sub>f</sub>* x *D<sub>f</sub>* + *M* x *N* x *D<sub>f</sub>* x *D<sub>f</sub>*. Dividing the two-step computational cost by the standard and canceling like-terms results in a 9 times less computationally expensive with only a small reduction in accuracy. The linear algebra deriving this intuition is explained in greater detail by Howard et. al's team at Google in section 3.1 of their paper on Mobilnets [here](https://arxiv.org/pdf/1704.04861.pdf)
+
+
 
