@@ -22,8 +22,8 @@ import numpy as np
 import six
 import tensorflow.compat.v1 as tf
 
-from object_detection.dataset_tools import seq_example_util
-from object_detection.utils import tf_version
+from dataset_tools import seq_example_util
+from utils import tf_version
 
 
 class SeqExampleUtilTest(tf.test.TestCase):
