@@ -22,7 +22,7 @@ from pycocotools import mask
 
 import tensorflow.compat.v1 as tf
 
-from object_detection.metrics import coco_tools
+from metrics import coco_tools
 
 
 class CocoToolsTest(tf.test.TestCase):

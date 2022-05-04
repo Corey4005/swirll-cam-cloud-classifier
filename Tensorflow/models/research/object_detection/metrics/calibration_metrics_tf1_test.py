@@ -21,8 +21,8 @@ from __future__ import print_function
 import unittest
 import numpy as np
 import tensorflow.compat.v1 as tf
-from object_detection.metrics import calibration_metrics
-from object_detection.utils import tf_version
+fro metrics import calibration_metrics
+from utils import tf_version
 
 
 @unittest.skipIf(tf_version.is_tf2(), 'Skipping TF1.X only test.')

@@ -25,7 +25,7 @@ import numpy as np
 import pandas as pd
 from pycocotools import mask as coco_mask
 
-from object_detection.core import standard_fields
+from core import standard_fields
 
 
 def _to_normalized_box(mask_np):

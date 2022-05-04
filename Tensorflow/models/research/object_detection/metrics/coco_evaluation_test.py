@@ -21,9 +21,9 @@ from __future__ import print_function
 import unittest
 import numpy as np
 import tensorflow.compat.v1 as tf
-from object_detection.core import standard_fields
-from object_detection.metrics import coco_evaluation
-from object_detection.utils import tf_version
+from core import standard_fields
+from metrics import coco_evaluation
+from utils import tf_version
 
 
 def _get_categories_list():
