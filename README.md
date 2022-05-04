@@ -12,7 +12,7 @@ git pull https://github.com/Corey4005/swirll-cam-cloud-classifier.git
 - There is documentation on the how to use the image labeler in the [imglabeler](https://github.com/Corey4005/swirll-cam-cloud-classifier/tree/main/Tensorflow/addons/imglabeler) directory of this repo. 
 
 # Credits for Compute Resources 
-This work was made possible in part by a grant of high performance computing resources and technical support from the [Alabama Supercomputer Authority.](https://hpcdocs.asc.edu/).
+This work was made possible in part by a grant of high performance computing resources and technical support from the [Alabama Supercomputer Authority](https://hpcdocs.asc.edu/).
 
 # Task List and Progress
 - [x] Download raw cloud image dataset and share to this repo.
