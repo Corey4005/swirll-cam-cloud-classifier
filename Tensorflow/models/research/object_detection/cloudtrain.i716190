@@ -1,0 +1,19 @@
+ 
+============================================================
+=====     Queued job information at submit time        =====
+============================================================
+  The submitted file is: shell_train_script.txt
+  The time limit is 01:00:00 HH:MM:SS.
+  The target directory is: /home/uahcxw001/swirlldemo/swirll-cam-cloud-classifier/Tensorflow/models/research/object_detection
+  The memory limit is: 30gb
+  The job will start running after: 2022-05-04T15:00:54
+  Job Name: cloudtrain
+  Virtual queue: gpu
+  QOS: --qos=gpu
+  Constraints: 
+  Command typed:
+/apps/scripts/run_gpu shell_train_script.txt     
+  Queue submit command:
+sbatch --qos=gpu -J cloudtrain --begin=2022-05-04T15:00:54 --requeue --mail-user=cdw0063@uah.edu -o cloudtrain.o$SLURM_JOB_ID -t 01:00:00 --gres=gpu:1 -N 1-1 -n 1 --mem-per-cpu=30000mb  
+  Job number: 716190
+ 
