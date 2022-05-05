@@ -1,3 +1,10 @@
+
+"""
+@author: mesocom
+@author: cwalker
+
+"""
+
 import matplotlib.pyplot as plt
 import matplotlib.image as mplim
 import numpy as np
