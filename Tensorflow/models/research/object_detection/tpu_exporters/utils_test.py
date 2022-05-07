@@ -21,7 +21,7 @@ from __future__ import print_function
 from six.moves import range
 import tensorflow.compat.v1 as tf
 
-from object_detection.tpu_exporters import utils
+from tpu_exporters import utils
 
 
 class UtilsTest(tf.test.TestCase):

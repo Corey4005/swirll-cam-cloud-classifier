@@ -33,9 +33,9 @@ from tensorflow.python.tpu import functional as tpu_functional
 from tensorflow.python.tpu import tpu
 from tensorflow.python.tpu.bfloat16 import bfloat16_scope
 from tensorflow.python.tpu.ops import tpu_ops
-from object_detection import exporter
-from object_detection.builders import model_builder
-from object_detection.tpu_exporters import utils
+import exporter
+from builders import model_builder
+from tpu_exporters import utils
 
 ANCHORS = 'anchors'
 BOX_ENCODINGS = 'box_encodings'

@@ -26,9 +26,9 @@ from tensorflow.python.saved_model import signature_constants
 from tensorflow.python.saved_model import tag_constants
 from tensorflow.python.tpu import tpu
 # pylint: enable=g-direct-tensorflow-import
-from object_detection.protos import pipeline_pb2
-from object_detection.tpu_exporters import faster_rcnn
-from object_detection.tpu_exporters import ssd
+from protos import pipeline_pb2
+from tpu_exporters import faster_rcnn
+from tpu_exporters import ssd
 
 model_map = {
     'faster_rcnn': faster_rcnn,
