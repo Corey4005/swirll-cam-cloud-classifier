@@ -20,6 +20,8 @@ from __future__ import print_function
 
 import tensorflow.compat.v1 as tf
 import tf_slim as slim
+from tensorflow.contrib.slim import softmax
+
 
 from nets import inception_utils
 
@@ -474,7 +476,7 @@ def inception_v2(inputs,
                  dropout_keep_prob=0.8,
                  min_depth=16,
                  depth_multiplier=1.0,
-                 prediction_fn=slim.softmax,
+                 prediction_fn=softmax,
                  spatial_squeeze=True,
                  reuse=None,
                  scope='InceptionV2',
