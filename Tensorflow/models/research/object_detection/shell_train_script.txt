@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#
+# load the module
+source /opt/asn/etc/asn-bash-profiles-special/modules.sh
+
+echo "Changed source successfully!"
+
+module load tensorflow/gpu_1.14.0
+
+echo "loaded  module, starting training now!"
+
+# comands 
+
+train_dir=/home/uahcxw001/swirlldemo/swirll-cam-cloud-classifier/Tensorflow/models/research/object_detection
+
+python ${train_dir}/train.py --logtostderr --train_dir=${train_dir}/workspace/swirll_demo/images/training/ --pipeline_config_path=${train_dir}/workspace/swirll_demo/images/training/ssd_mobilenet_v1_coco.config
+
+

@@ -47,10 +47,10 @@ from absl import flags
 import pandas as pd
 from google.protobuf import text_format
 
-from object_detection.metrics import io_utils
-from object_detection.metrics import oid_challenge_evaluation_utils as utils
-from object_detection.protos import string_int_label_map_pb2
-from object_detection.utils import object_detection_evaluation
+from metrics import io_utils
+from metrics import oid_challenge_evaluation_utils as utils
+from protos import string_int_label_map_pb2
+from utils import object_detection_evaluation
 
 flags.DEFINE_string('input_annotations_boxes', None,
                     'File with groundtruth boxes annotations.')

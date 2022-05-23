@@ -22,10 +22,10 @@ import six
 import tensorflow.compat.v1 as tf
 from google.protobuf import text_format
 
-from object_detection.core import standard_fields
-from object_detection.inference import detection_inference
-from object_detection.utils import dataset_util
-from object_detection.utils import tf_version
+from core import standard_fields
+from inference import detection_inference
+from utils import dataset_util
+from utils import tf_version
 
 
 def get_mock_tfrecord_path():

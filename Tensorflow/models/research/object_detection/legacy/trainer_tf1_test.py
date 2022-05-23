@@ -19,12 +19,12 @@ import tensorflow.compat.v1 as tf
 import tf_slim as slim
 from google.protobuf import text_format
 
-from object_detection.core import losses
-from object_detection.core import model
-from object_detection.core import standard_fields as fields
-from object_detection.legacy import trainer
-from object_detection.protos import train_pb2
-from object_detection.utils import tf_version
+from core import losses
+from core import model
+from core import standard_fields as fields
+from legacy import trainer
+from protos import train_pb2
+from utils import tf_version
 
 
 NUMBER_OF_CLASSES = 2

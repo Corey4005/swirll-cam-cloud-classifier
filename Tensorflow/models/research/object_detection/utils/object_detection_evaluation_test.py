@@ -25,8 +25,8 @@ import numpy as np
 import six
 from six.moves import range
 import tensorflow.compat.v1 as tf
-from object_detection import eval_util
-from object_detection.core import standard_fields
+import eval_util
+from core import standard_fields
 from object_detection.utils import object_detection_evaluation
 from object_detection.utils import tf_version
 

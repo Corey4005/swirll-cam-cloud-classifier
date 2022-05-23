@@ -17,7 +17,7 @@ from lvis import results as lvis_results
 import numpy as np
 from pycocotools import mask
 import tensorflow.compat.v1 as tf
-from object_detection.metrics import lvis_tools
+from metrics import lvis_tools
 
 
 class LVISToolsTest(tf.test.TestCase):

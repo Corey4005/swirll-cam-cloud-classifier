@@ -27,8 +27,8 @@ from pycocotools import mask as coco_mask
 import six
 import tensorflow.compat.v1 as tf
 
-from object_detection.core import standard_fields
-from object_detection.metrics import oid_challenge_evaluation_utils as utils
+from core import standard_fields
+from metrics import oid_challenge_evaluation_utils as utils
 
 
 def encode_mask(mask_to_encode):

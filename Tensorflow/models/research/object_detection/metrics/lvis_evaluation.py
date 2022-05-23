@@ -26,9 +26,9 @@ import numpy as np
 from six.moves import zip
 import tensorflow.compat.v1 as tf
 
-from object_detection.core import standard_fields as fields
-from object_detection.metrics import lvis_tools
-from object_detection.utils import object_detection_evaluation
+from core import standard_fields as fields
+from metrics import lvis_tools
+from utils import object_detection_evaluation
 
 
 def convert_masks_to_binary(masks):
