@@ -4,6 +4,16 @@ Project Description:
     This module contains functions that can be easily utilized in jupyter notebooks
     for the use of creating object detection models in Tensorflow. 
     
+    Note on train_test_split() function:
+        
+        In order for this funtion to work correctly, images that have been processed
+        to .xml files should be saved in a class directiory. Images that correspond
+        to the .xml files should be saved in their original .jpg format in the following
+        location:
+            
+            '../Tensorflow/models/research/object_detection/workspace/swirll_demo/images'
+            
+        
 Created on 4/11/23 
 
 @author Corey Walker
@@ -14,8 +24,12 @@ contact:
     
 Note: 
     
-    Please site this module if the functions are used in another analysis and 
+    Please site the following Github if the functions are used in another analysis and 
     published. 
+    
+    Github:
+        
+        https://github.com/Corey4005
     
 """
 

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images</folder>
+	<filename>swirlldata2020_0107_145800.jpg</filename>
+	<path>/Users/coreywalker/Desktop/ATS671/swirll-cam-cloud-classifier/Tensorflow/models/research/object_detection/workspace/swirll_demo/images/swirlldata2020_0107_145800.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>10771</width>
+		<height>2048</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>fair-weather-cumulus</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>253</xmin>
+			<ymin>691</ymin>
+			<xmax>506</xmax>
+			<ymax>821</ymax>
+		</bndbox>
+	</object>
+</annotation>
