@@ -3,18 +3,33 @@
 
 
 """
-'
-Command for test record:
-    python generate_tfrecord.py 
-    --csv_input='../Tensorflow/models/research/object_detection/workspace/swirll_demo/images/test/data/'
-    --output_path=../Tensorflow/models/research/object_detection/workspace/swirll_demo/images/test/data/test.record 
-    --image_dir='../Tensorflow/models/research/object_detection/workspace/swirll_demo/images
+Module Purpose: This module contains command line tools that can be utilized to 
+generate tensorflow record files needed for training models in the training and testing
+directories created in the model_functions.py module. 
+
+steps: 
     
-Command for training record: 
-    python generate_tfrecord.py 
-    --csv_input='../Tensorflow/models/research/object_detection/workspace/swirll_demo/images/train/data/'
-    --output_path=../Tensorflow/models/research/object_detection/workspace/swirll_demo/images/train/data/train.record 
-    --image_dir='../Tensorflow/models/research/object_detection/workspace/swirll_demo/images
+    1. Open a command line terminal. 
+    
+    2. Change directory (cd) into: 
+        
+        '../swirll-cam-cloud-classifier/function-modules/'
+        
+    3. Input the following commands into the command line in sequential steps. 
+    
+    a. Command for test record:
+        
+        python generate_tfrecord.py 
+        --csv_input='../Tensorflow/models/research/object_detection/workspace/swirll_demo/images/test/data/'
+        --output_path=../Tensorflow/models/research/object_detection/workspace/swirll_demo/images/test/data/test.record 
+        --image_dir='../Tensorflow/models/research/object_detection/workspace/swirll_demo/images
+    
+    b. Command for training record: 
+        
+        python generate_tfrecord.py 
+        --csv_input='../Tensorflow/models/research/object_detection/workspace/swirll_demo/images/train/data/'
+        --output_path=../Tensorflow/models/research/object_detection/workspace/swirll_demo/images/train/data/train.record 
+        --image_dir='../Tensorflow/models/research/object_detection/workspace/swirll_demo/images
 
 Created on Fri Apr 22 11:50:27 2022
 

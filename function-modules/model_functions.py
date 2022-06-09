@@ -1,35 +1,45 @@
 """
-Project Description: 
+Module Purpose: 
     
-    This module contains functions that can be easily utilized in jupyter notebooks
-    for the use of creating object detection models in Tensorflow. 
+    This module contains functions that can be easily utilized to automate file-path
+    construction of training and testing directores, as well as split .xml files
+    used for training a tensorflow model into training and testing partitions from 
+    a known class directory. 
     
+    
+Steps:
+        
+    1. Run train_test_split() on .xml directory. This will create training and testing 
+    folders that include the original .jpg files from the class directory along
+    a pre-defined 'split' percentage.
+            
+    An example split percentage might be 70% training and 30% testing. The 
+    split parameter can be passed in the train_test_split() function
+    documented in this module. 
+            
     Note on train_test_split() function:
-        
+                
         In order for this funtion to work correctly, images that have been processed
-        to .xml files should be saved in a class directiory. Images that correspond
-        to the .xml files should be saved in their original .jpg format in the following
+        to .xml files should be saved in a class directiory. 
+                
+        example class directory (here-after known as 'class_dir in this module'):
+                    
+            ../Tensorflow/models/research/object_detection/workspace/swirll_demo/images/fair-weather-cumulus/
+                
+        Images that correspond to the .xml files should be saved in their original .jpg format in the following
         location:
-            
+                    
             '../Tensorflow/models/research/object_detection/workspace/swirll_demo/images'
-            
         
-Created on 4/11/23 
-
-@author Corey Walker
-
-contact: 
-    
-    cdw0063@uah.edu
-    
-Note: 
-    
-    Please site the following Github if the functions are used in another analysis and 
-    published. 
-    
-    Github:
+    2. convert the .xml files to a .csv using the run_xml_to_csv() function.
+    This function will call each training and testing folder created by the 
+    train_test_split() funciton in step 1 and will create a .csv 
+    document of relevant labels for the model to train on.
         
-        https://github.com/Corey4005
+    3. Generate a tf.record from the .csv labels for each of the test and training folders
+    using the command line and instructions in found in the generate_tfrecord.py module. 
+        
+@author coreywalker
     
 """
 
@@ -75,7 +85,7 @@ def train_test_split(class_dir, split=None):
         to split into training and testing partions. 
         
         example directory: 
-            class_dir = '../Tensorflow/workspace/swirll_demo/images/fair-weather-cumulus/'
+            class_dir = '../Tensorflow/models/research/object_detection/workspace/swirll_demo/images/fair-weather-cumulus/'
             #Pass the class_dir object to the argument in the function. 
             
     split : float
@@ -91,11 +101,11 @@ def train_test_split(class_dir, split=None):
     -------
     test : Directory containing model test images
     
-        '../Tensorflow/workspace/swirll_demo/images/test'
+        '../Tensorflow/models/research/object_detection/workspace/swirll_demo/images/test'
     
     train : Directory containing model training images
         
-        '../Tensorflow/workspace/swirll_demo/images/train'
+        '../Tensorflow/models/research/object_detection/workspace/swirll_demo/images/train'
     
 
     '''
@@ -177,6 +187,24 @@ def xml_to_csv(path):
     ----------
     path : Str 
         Input the path object to the .xml files 
+        
+    How to use
+    ----------
+    
+    To create a test-label in the testing directory: 
+        
+        xml_to_csv('../Tensorflow/models/research/object_detection/workspace/swirll_demo/images/test/)
+                   
+    To create a training-label in the train directory:
+        
+        xml_to_csv('../Tensorflow/models/research/object_detection/workspace/swirll_demo/images/train/)
+        
+    Note: 
+        
+        It is reccomended that you do not call this function directly.
+        Instead, use the run_xml_to_csv() function in this module, 
+        which will call the training and testing paths in sequential 
+        steps, rather than having to do this step twice. 
 
     Returns
     -------
@@ -223,11 +251,17 @@ def run_xml_to_csv():
     Runs the xml_to_csv() function in functions.py for train and test directories
     located in the images directory of swirldemo.
     
+    How to use
+    ----------
+    
+    In a IDE run the following without any arguments:
+        
+        run_xml_to_csv()
 
     Returns
     -------
-    One .csv file for both train and test directories containing the labels for 
-    independent .xml files. 
+    One .csv label file for both train and test directories containing .xml, .jpg
+    data
 
     '''
     
