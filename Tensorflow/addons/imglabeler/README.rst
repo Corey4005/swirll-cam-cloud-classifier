@@ -10,7 +10,7 @@ Open the Anaconda Prompt and go to the `labelImg <#labelimg>`__ directory
 
     python labelImg.py
     python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
-
+    
 Hotkeys
 ~~~~~~~
 
